@@ -4,7 +4,7 @@
 
 This project is an expanded portfolio rebuild derived from graduate forecasting coursework. It demonstrates seasonal baselines, parsimonious forecasting models, expanding-window rolling-origin validation, reproducible model comparison, and explicit leakage controls on a very short quarterly series.
 
-The project is an `ANALYTICAL_DEMONSTRATION`, not a production forecasting system. The implementation passed a separate internal reproduction audit, but the data and conclusions remain subject to the limitations below.
+The project is an `ANALYTICAL_DEMONSTRATION`, not a production forecasting system. The implementation passed reproducibility checks, but the data and conclusions remain subject to the limitations below.
 
 ## Why this project matters
 
@@ -19,7 +19,7 @@ Forecasting examples often emphasize model complexity while underemphasizing eva
 
 ## Dataset
 
-The validated internal analysis uses 12 quarterly observations: exactly three seasonal cycles.
+The validated analysis uses 12 quarterly observations: exactly three seasonal cycles.
 
 | Attribute | Status |
 |---|---|
@@ -32,7 +32,7 @@ The validated internal analysis uses 12 quarterly observations: exactly three se
 | Original dates | Not verified |
 | Units and business context | Unknown |
 
-The intended public export excludes the historical workbook, processed values, and detailed execution copy. The archival workspace retains those private references outside the allowlisted export. A schema-only example is provided in `data/example_schema.csv`; users must supply a compatible dataset they are authorized to use. See `data/README.md` and `LICENSE_STATUS.md`.
+This repository excludes the historical workbook, processed values, and detailed execution copy. Those private references remain preserved separately. A schema-only example is provided in `data/example_schema.csv`; users must supply a compatible dataset they are authorized to use. See `data/README.md` and `LICENSE_STATUS.md`.
 
 ## Forecasting task
 
@@ -75,17 +75,17 @@ All 50 stored model forecasts passed this assertion. A separate stress test repl
 
 ## Results
 
-`SEASONAL_MEAN` was the best-performing model within the evaluated internal demonstration, including the common one-step-only and later-origin checks. These checks support a scoped analytical selection; they do not establish general or long-run model superiority. Exact course-series metrics and data-derived figures remain held pending derivative-rights clearance. Running the code with an authorized input produces a complete comparison that includes the required seasonal-naive benchmark.
+`SEASONAL_MEAN` was the best-performing model within the evaluated demonstration, including the common one-step-only and later-origin checks. These checks support a scoped analytical selection; they do not establish general or long-run model superiority. Exact course-series metrics and data-derived figures remain held pending derivative-rights clearance. Running the code with an authorized input produces a complete comparison that includes the required seasonal-naive benchmark.
 
 ## Restricted-data visuals
 
-Historical-series, seasonal-pattern, actual-versus-backtest, model-performance, error, and final-series charts are intentionally withheld because they expose or derive from unresolved course-provided values. The public candidate retains only the data-independent evaluation-design schematic above.
+Historical-series, seasonal-pattern, actual-versus-backtest, model-performance, error, and final-series charts are intentionally withheld because they expose or derive from unresolved course-provided values. The repository retains only the data-independent evaluation-design schematic above.
 
 ## Final forecast
 
 The selected model was refit to all 12 observations. Backtest metrics and future demonstration forecasts remain separate. The workflow produces point forecasts only; the validated course-series point values are held from the rights-neutral export pending derivative-rights clearance.
 
-No publication-quality forecast interval is claimed. Module 7.5A rejected the earlier pooled-residual bands for public interpretation because only 10 residual rows and four unique errors were available, the nominal 80% and 95% endpoints coincided, and coverage was not calibrated. No replacement interval was invented.
+No publication-quality forecast interval is claimed. A methodological review rejected the earlier pooled-residual bands for public interpretation because only 10 residual rows and four unique errors were available, the nominal 80% and 95% endpoints coincided, and coverage was not calibrated. No replacement interval was invented.
 
 ## Important limitations
 
@@ -112,7 +112,7 @@ python run_analysis.py --data "path\to\authorized_quarterly_data.csv"
 
 The CSV must contain exactly 12 rows with `period_index`, `quarter`, and `demand` columns. Running `python run_analysis.py` without an input exits with a clear instruction instead of reaching into a private source directory.
 
-Authorized internal reproduction can explicitly use the preserved workbook without hard-coding its location:
+Users with access to an authorized preserved workbook can reproduce the analysis without hard-coding its location:
 
 ```powershell
 python run_analysis.py --source-workbook "path\to\authorized_workbook.xlsx"
@@ -152,7 +152,7 @@ repository-root/
     └── public_claims.md
 ```
 
-Generated tables and figures are written to the ignored local `.private_outputs/` directory. Only the individually reviewed schematic under `docs/figures/` is eligible for interim export. Every input-derived table and figure remains excluded while rights are unresolved.
+Generated tables and figures are written to the ignored local `.private_outputs/` directory. Only the individually reviewed, data-independent schematic under `docs/figures/` is included in this repository. Every input-derived table and figure remains excluded while rights are unresolved.
 
 ## Historical provenance
 
@@ -169,6 +169,6 @@ This repository is an expanded portfolio rebuild derived from graduate coursewor
 - reproducible testing;
 - professional analytical communication.
 
-## Publication status
+## Rights and usage
 
-Module 8A granted interim approval after the recorded prepublication edits, pending the final five-project Module 8B audit. The project has not been published, no public license has been assigned, and the historical data are not approved for redistribution.
+This repository is public for portfolio review. No public license has been assigned, and the historical data are not approved for redistribution. See [LICENSE_STATUS.md](LICENSE_STATUS.md) for the current rights posture.
